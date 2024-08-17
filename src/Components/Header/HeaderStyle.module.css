@@ -69,3 +69,50 @@ ul li a {
     justify-content: center;
     align-content: center;
 }
+.menuButton {
+    display: none;
+}
+.menu {
+    display: none;
+}
+@media screen and (max-width: 640px) {
+    .mobileHide {
+        display: none;
+    }
+    .main {
+        padding: 0 5px;
+    }
+
+    .menuButton {
+        display: block;
+        height: 50px;
+        width: 50px;
+        border: none;
+        background: #749951;
+        color: white;
+        border-radius: 5px;
+    }
+    h1 {
+        margin-bottom: 15px;
+    }
+    ul li {
+        padding: 15px 15px;
+    }
+    .userLink {
+        text-align: right;
+    }
+    .menu {
+        box-sizing: border-box;
+        padding: 5px 15px;
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        width: 80vw;
+        background: #CCCCCC;
+        display: block;
+        transition: .5s all ease;
+    }
+    .menuLiActive {
+        background: #749951;
+    }
+}
