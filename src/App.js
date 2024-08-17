@@ -1,4 +1,5 @@
-import Header from "./Components/Header";
+import Header from "./Components/Header/Header";
+import "./style.css";
 
 function App() {
   return (
@@ -7,3 +8,5 @@ function App() {
 }
 
 export default App;
+
+// main color - #618935

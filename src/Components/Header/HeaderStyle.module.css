@@ -1,0 +1,71 @@
+.main {
+    background: #618935;
+    color: white;
+    padding: 0 30px;
+    min-height: 50px;
+    font-family: Arial;
+    display: flex;
+    justify-content: space-between;
+}
+.item {
+    height: inherit;
+    min-height: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    vertical-align: center;
+}
+.list {
+    height: inherit;
+    min-height: inherit;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-items: center;
+    vertical-align: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+ul li {
+    display: flex;
+    flex-direction: row;
+    height: inherit;
+    min-height: inherit;
+    padding: 15px 30px;
+    margin-right: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    align-self: center;
+}
+ul li a {
+    display: flex;
+    flex-direction: row;
+    height: inherit;
+    min-height: inherit;
+    margin-right: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    vertical-align: center;
+}
+.liActive {
+    background: #749951;
+}
+.secondary {
+    color: #CCC;
+}
+.userLink {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
