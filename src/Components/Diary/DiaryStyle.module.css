@@ -37,3 +37,9 @@
     border-bottom: 5px dotted #CCC;
     margin-left: 15px;
 }
+.dayButton {
+    border: inherit;
+    background: inherit;
+    font-size: 1rem;
+    color: #618935;
+}

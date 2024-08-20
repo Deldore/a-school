@@ -48,23 +48,7 @@ const Diary = () => {
 
     const [days, setDays] = useState(constructDays(weekDiff));
 
-    const [isDayShowed, setIsDayShowed] = useState([
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-    ]);
-
-    const [changedIsDayShowed, setChangedIsDayShowed] = useState([
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-    ]);
+    const [isDayShowed, setIsDayShowed] = useState([]);
 
     useEffect(() => {
         setDays(constructDays(weekDiff));
@@ -99,14 +83,24 @@ const Diary = () => {
                         </div>
                         <div className={style.line}></div>
                         <div>
-                            <button onClick={() => {
-                                let h = isDayShowed;
-                                h[index] = !h[index];
-                                setChangedIsDayShowed(h);
+                            <button className={style.dayButton} onClick={(e) => {
+                                if (isDayShowed.includes(index)) {
+                                    setIsDayShowed(isDayShowed.filter(day => day !== index))
+                                } else {
+                                    setIsDayShowed([...isDayShowed, index])
+                                }
                             }}>
-                                {isDayShowed[index]} {(isDayShowed[index]) ? "Свернуть" : "Развернуть"}
+                                {(isDayShowed.includes(index)) ? "Свернуть" : "Развернуть"}
                             </button>
                         </div>
+                    </div>
+                    <div style={{display: (isDayShowed.includes(index)) ? "flex" : "none"}}>
+                        <table>
+                            <tr>1</tr>
+                            <tr>2</tr>
+                            <tr>3</tr>
+                            <tr>4</tr>
+                        </table>
                     </div>
                 </>
             ))}
