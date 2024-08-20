@@ -14,27 +14,27 @@ const Header = () => {
     return (
         <div className={style.main}>
             <div className={style.item} ref={menuRef}>
-                <ul className={`${style.list} ${style.mobileHide}`}>
-                    <li className={style.liActive}>
-                        <a href="#">
+                <ul className={`${style.list} ${style.mobileHide} ${style.spis}`}>
+                    <li className={`${style.liActive} ${style.listItem}`}>
+                        <a className={style.link} href="#">
                             Дневник
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
+                    <li className={style.listItem}>
+                        <a className={style.link} href="#">
                             Расписание
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
+                    <li className={style.listItem}>
+                        <a className={style.link} href="#">
                             Сообщения
                         </a>
                     </li>
                 </ul>
             </div>
             <div className={style.item}>
-                <ul className={style.list}>
-                    <li>
+                <ul className={`${style.list} ${style.spis}`}>
+                    <li className={style.listItem}>
                         <div>
                             <img src="" alt=""/>
                         </div>
@@ -45,31 +45,31 @@ const Header = () => {
                             </span>
                         </div>
                     </li>
-                    <li className={style.mobileHide}>
-                        <a href="#">
+                    <li className={`${style.mobileHide} ${style.listItem}`}>
+                        <a className={style.link} href="#">
                             Выйти
                         </a>
                     </li>
-                    <li>
+                    <li className={style.listItem}>
                         <button className={style.menuButton} onClick={() => {setMenuState(!menuState)}}>=</button>
                     </li>
                 </ul>
             </div>
             <div className={style.menu} style={{left: (menuState) ? '0' : '-80vw', top: menuTop + 'px'}}>
                 <h1>Меню:</h1>
-                <ul className={`${style.menuList}`}>
-                    <li className={style.menuLiActive}>
-                        <a href="#">
+                <ul className={`${style.menuList} ${style.spis}`}>
+                    <li className={`${style.menuLiActive} ${style.listItem}`}>
+                        <a className={style.link} href="#">
                             Дневник
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
+                    <li className={style.listItem}>
+                        <a className={style.link} href="#">
                             Расписание
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
+                    <li className={style.listItem}>
+                        <a className={style.link} href="#">
                             Сообщения
                         </a>
                     </li>

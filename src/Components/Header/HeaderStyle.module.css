@@ -28,7 +28,7 @@
     align-content: center;
     align-self: center;
 }
-ul li {
+.spis .listItem {
     display: flex;
     flex-direction: row;
     height: inherit;
@@ -40,7 +40,7 @@ ul li {
     color: white;
     align-self: center;
 }
-ul li a {
+.spis .listItem .link {
     display: flex;
     flex-direction: row;
     height: inherit;
@@ -95,7 +95,7 @@ ul li a {
     h1 {
         margin-bottom: 15px;
     }
-    ul li {
+    .spis .listItem {
         padding: 15px 15px;
     }
     .userLink {

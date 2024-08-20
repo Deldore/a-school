@@ -1,0 +1,47 @@
+.main {
+    padding: 0 50px;
+    min-height: 50px;
+    font-family: Arial;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+
+}
+
+.list {
+
+}
+
+.spis {
+    height: inherit;
+    min-height: inherit;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-items: center;
+    vertical-align: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+.listItem {
+    padding: 5px 15px;
+    font-weight: bold;
+    color: #002A28;
+}
+.link {
+    color: #002A28;
+    text-decoration: none;
+}
+.listContactItem {
+    font-size: 1.2rem;
+    text-align: right;
+}
+.contactLink {
+    color: #7BBB60;
+    font-size: .95rem;
+    text-decoration: underline;
+    font-weight: 600;
+}

@@ -1,0 +1,39 @@
+.container {
+    padding: 15px 5%;
+}
+.dayPanel {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.dayName {
+    font-family: Arial;
+    font-size: 1.5rem;
+    vertical-align: center;
+    justify-items: center;
+    align-items: center;
+}
+.secondary {
+    color: #777;
+    font-size: 1.7rem;
+    font-weight: 200;
+    margin-left: 15px;
+}
+.dayStatus {
+    font-family: Arial;
+    font-size: 1rem;
+    align-self: center;
+    justify-self: center;
+    margin-left: 15px;
+    border-radius: 5px;
+    background: #ccc;
+    padding: 2px 5px;
+}
+.line {
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    border-bottom: 5px dotted #CCC;
+    margin-left: 15px;
+}

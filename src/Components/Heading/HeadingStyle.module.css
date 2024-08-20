@@ -1,0 +1,29 @@
+.list {
+    display: flex;
+    list-style: none;
+    font-weight: 600;
+    font-family: Arial;
+    color: #84C063;
+    font-size: .8rem;
+}
+.secondary {
+    color: #6C827F !important;
+    margin-left: 15px;
+}
+.item {
+    color: #84C063;
+}
+
+.itemLink {
+    margin-right: 15px;
+    color: #84C063 !important;
+    text-decoration: none;
+}
+
+.title {
+    font-family: Arial;
+    margin-top: 20px;
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-decoration: underline #84C063;
+}
