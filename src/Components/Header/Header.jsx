@@ -1,5 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react';
 import style from './HeaderStyle.module.css';
+import diaryIcon from '../../Images/diaryIcon.png';
+import scheduleIcon from '../../Images/scheduleIcon.png';
+import messageIcon from '../../Images/messageIcon.png';
+import userIcon from '../../Images/userIcon.png';
+import quitIcon from '../../Images/quitIcon.png';
 const Header = () => {
     const [menuState, setMenuState] = useState(false);
 
@@ -17,16 +22,19 @@ const Header = () => {
                 <ul className={`${style.list} ${style.mobileHide} ${style.spis}`}>
                     <li className={`${style.liActive} ${style.listItem}`}>
                         <a className={style.link} href="#">
+                            <img src={diaryIcon} style={{marginRight: "15px"}}/>
                             Дневник
                         </a>
                     </li>
                     <li className={style.listItem}>
                         <a className={style.link} href="#">
+                            <img src={scheduleIcon} style={{marginRight: "15px"}}/>
                             Расписание
                         </a>
                     </li>
                     <li className={style.listItem}>
                         <a className={style.link} href="#">
+                            <img src={messageIcon} style={{marginRight: "15px"}}/>
                             Сообщения
                         </a>
                     </li>
@@ -35,11 +43,11 @@ const Header = () => {
             <div className={style.item}>
                 <ul className={`${style.list} ${style.spis}`}>
                     <li className={style.listItem}>
-                        <div>
-                            <img src="" alt=""/>
+                        <div style={{alignSelf: "center"}}>
+                            <img src={userIcon} style={{marginRight: "15px"}}/>
                         </div>
                         <div className={style.userLink}>
-                            Фамилия Имя Отчество
+                        Фамилия Имя Отчество
                             <span className={style.secondary}>
                                 1-A class
                             </span>
@@ -47,11 +55,15 @@ const Header = () => {
                     </li>
                     <li className={`${style.mobileHide} ${style.listItem}`}>
                         <a className={style.link} href="#">
+                            <div style={{alignSelf: "center"}}>
+                                <img src={quitIcon} style={{marginRight: "15px"}}/>
+                            </div>
                             Выйти
                         </a>
                     </li>
                     <li className={style.listItem}>
-                        <button className={style.menuButton} onClick={() => {setMenuState(!menuState)}}>=</button>
+                        <button className={style.menuButton} onClick={() => {
+                            setMenuState(!menuState)}}>=</button>
                     </li>
                 </ul>
             </div>
@@ -72,6 +84,39 @@ const Header = () => {
                         <a className={style.link} href="#">
                             Сообщения
                         </a>
+                    </li>
+                    <li className={`${style.listItem}`}>
+                        <a className={style.link} href="#">
+                            <div style={{alignSelf: "center"}}>
+                                <img src={quitIcon} style={{marginRight: "15px"}}/>
+                            </div>
+                            Выйти
+                        </a>
+                    </li>
+                    <hr style={{color: "white"}}/>
+                    <li className={`${style.listItem}`}>
+                        <a className={`${style.link}`} href="#">
+                            ОБРАЗОВАНИЕ
+                        </a>
+                    </li>
+                    <li className={`${style.listItem}`}>
+                        <a className={`${style.link}`} href="#">
+                            ПОСТУПЛЕНИЕ И ОПЛАТА
+                        </a>
+                    </li>
+                    <li className={`${style.listItem}`}>
+                        <a className={`${style.link}`} href="#">
+                            ИНФОРМАЦИЯ
+                        </a>
+                    </li>
+                    <li className={`${style.listItem}`}>
+                        <a className={`${style.link}`} href="#">
+                            КОНТАКТЫ
+                        </a>
+                    </li>
+                    <li className={`${style.listItem} ${style.listContactItem}`}>
+                        <p>+7 812 777-77-77</p>
+                        <a className={`${style.contactLink}`}>Обратная связь</a>
                     </li>
                 </ul>
             </div>

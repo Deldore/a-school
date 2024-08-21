@@ -3,7 +3,7 @@ import style from './HeadingStyle.module.css';
 
 const Heading = (props) => {
     return (
-        <div>
+        <div className={style.container}>
             <div>
                 <ul className={`${style.list}`}>
                     <li className={`${style.item} ${style.itemLink}`}>

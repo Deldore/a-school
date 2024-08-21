@@ -45,3 +45,15 @@
     text-decoration: underline;
     font-weight: 600;
 }
+@media screen and (max-width: 640px) {
+    .mobileHide {
+        display: none !important;
+    }
+    .main {
+        padding: 0 50px;
+        min-height: 50px;
+        font-family: Arial;
+        display: flex;
+        justify-content: center;
+    }
+}

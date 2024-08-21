@@ -72,8 +72,7 @@ const Diary = () => {
     const COUNTER = [1, 2, 3, 4, 5];
 
     return (
-        <main className={style.container}>
-            <Heading title="Дневник 1-А"/>
+        <div className={style.container}>
             <div className={style.week}>
                 <button className={style.dayButton} style={{fontSize: "120%"}} onClick={(e) => {
                     e.preventDefault();
@@ -214,7 +213,7 @@ const Diary = () => {
                     </div>
                 </>
             ))}
-        </main>
+        </div>
     );
 };
 
