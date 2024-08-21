@@ -1,3 +1,19 @@
 .container {
     padding: 15px 5%;
 }
+.dayButton {
+    border: inherit;
+    background: inherit;
+    font-size: 1rem;
+    color: #618935;
+    cursor: pointer;
+    align-self: center;
+    vertical-align: center;
+    justify-self: center;
+}
+.counter {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    justify-items: center;
+}
