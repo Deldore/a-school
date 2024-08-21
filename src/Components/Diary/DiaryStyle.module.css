@@ -89,4 +89,47 @@ th, td {
     .mobileHidden {
         display: none !important;
     }
+    .dayName {
+         font-family: Arial;
+         font-size: 1rem;
+         vertical-align: center;
+         justify-items: center;
+         align-items: center;
+     }
+    .secondary {
+        color: #777;
+        font-size: 1.1rem;
+        font-weight: 200;
+        margin-left: 10px;
+    }
+    .dayStatus {
+        display: none;
+    }
+    .line {
+        flex-basis: 0;
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+        max-width: 100%;
+        border-bottom: 3px dotted #CCC;
+        margin-left: 1px;
+        align-self: end;
+    }
+    .dayPanel {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        max-height: 1.5rem;
+        overflow: hidden;
+    }
+    .table {
+        border-radius: 5px;
+        max-width: 100%;
+        padding: 0;
+        box-sizing: content-box;
+        overflow: hidden;
+        font-size: .9rem;
+    }
+    .time {
+        display: none;
+    }
 }

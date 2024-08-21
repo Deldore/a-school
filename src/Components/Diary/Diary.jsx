@@ -142,7 +142,7 @@ const Diary = () => {
                         <table className={style.table}>
                             <thead>
                                 <th>№</th>
-                                <th>Время</th>
+                                <th className={style.time}>Время</th>
                                 <th>Предмет/мероприятие</th>
                                 <th>Тема, домашнее задание, комментарий</th>
                                 <th>Оценка</th>
@@ -150,7 +150,7 @@ const Diary = () => {
                             <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>08:00 - 08:45</td>
+                                <td className={style.time}>08:00 - 08:45</td>
                                 <td>Литература, чтение</td>
                                 <td style={{textAlign: "left"}}>
                                     <b>Тема:</b> Пример очень длинного названия темы, для визуализации второй
@@ -165,7 +165,7 @@ const Diary = () => {
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>09:00 - 09:45</td>
+                                <td className={style.time}>09:00 - 09:45</td>
                                 <td>Литература, чтение</td>
                                 <td style={{textAlign: "left"}}>
                                     <b>Тема:</b> Пример очень длинного названия темы, для визуализации второй
@@ -180,7 +180,7 @@ const Diary = () => {
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>10:00 - 10:45</td>
+                                <td className={style.time}>10:00 - 10:45</td>
                                 <td>Литература, чтение</td>
                                 <td style={{textAlign: "left"}}>
                                     <b>Тема:</b> Пример очень длинного названия темы, для визуализации второй
@@ -195,7 +195,7 @@ const Diary = () => {
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>11:00 - 11:45</td>
+                                <td className={style.time}>11:00 - 11:45</td>
                                 <td>Литература, чтение</td>
                                 <td style={{textAlign: "left"}}>
                                     <b>Тема:</b> Пример очень длинного названия темы, для визуализации второй

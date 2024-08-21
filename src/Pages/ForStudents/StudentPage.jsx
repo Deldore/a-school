@@ -5,6 +5,7 @@ import Heading from "../../Components/Heading/Heading";
 import Diary from "../../Components/Diary/Diary";
 import style from './StudentStyles.module.css';
 import Statistic from "../../Components/Statistic/Statistic";
+import Footer from "../../Components/Footer/Footer";
 
 const StudentPage = () => {
 
@@ -27,6 +28,7 @@ const StudentPage = () => {
                     <Statistic />
                 )}
             </main>
+            <Footer/>
         </>
     );
 };
