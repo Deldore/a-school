@@ -74,20 +74,20 @@ const Statistic = () => {
                     ←
                 </button>
                 {(choosenPart - 1 > 0) ? (
-                    <div className={`${style.diaryItem} ${style.secondary}`}>
+                    <div className={`${style.diaryItem} ${style.secondary} ${style.mobileHidden}`}>
                         <h2>{choosenPart - 1} четверть</h2>
                     </div>
                 ) : (
-                    <div className={`${style.diaryItem} ${style.secondary}`} style={{opacity: 0}}>
+                    <div className={`${style.diaryItem} ${style.secondary} ${style.mobileHidden}`} style={{opacity: 0}}>
                         <h2>{choosenPart - 2} четверть</h2>
                     </div>
                 )}
                 {(choosenPart > 0) ? (
-                    <div className={`${style.diaryItem} ${style.secondary}`}>
+                    <div className={`${style.diaryItem} ${style.secondary} ${style.mobileHidden}`}>
                         <h2>{choosenPart} четверть</h2>
                     </div>
                 ) : (
-                    <div className={`${style.diaryItem} ${style.secondary}`} style={{opacity: 0}}>
+                    <div className={`${style.diaryItem} ${style.secondary} ${style.mobileHidden}`} style={{opacity: 0}}>
                         <h2>{choosenPart - 1} четверть</h2>
                     </div>
                 )}
@@ -103,21 +103,21 @@ const Statistic = () => {
                     </div>
                 )}
                 {(choosenPart + 1 < 4) ? (
-                    <div className={`${style.diaryItem} ${style.secondary}`}>
+                    <div className={`${style.diaryItem} ${style.secondary} ${style.mobileHidden}`}>
                         <h2>{choosenPart + 2} четверть</h2>
                     </div>
                 ) : (
-                    <div className={`${style.diaryItem} ${style.secondary}`} style={{opacity: (choosenPart >= 4) ? 0 : ''}}>
+                    <div className={`${style.diaryItem} ${style.secondary} ${style.mobileHidden}`} style={{opacity: (choosenPart >= 4) ? 0 : ''}}>
                         <h2>Итоговая</h2>
                     </div>
                 )}
 
                 {(choosenPart + 2 < 4) ? (
-                    <div className={`${style.diaryItem} ${style.secondary}`}>
+                    <div className={`${style.diaryItem} ${style.secondary} ${style.mobileHidden}`}>
                         <h2>{choosenPart + 3} четверть</h2>
                     </div>
                 ) : (
-                    <div className={`${style.diaryItem} ${style.secondary}`} style={{opacity: (choosenPart >= 3) ? 0 : ''}}>
+                    <div className={`${style.diaryItem} ${style.secondary} ${style.mobileHidden}`} style={{opacity: (choosenPart >= 3) ? 0 : ''}}>
                         <h2>Итоговая</h2>
                     </div>
                 )}

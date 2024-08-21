@@ -81,20 +81,20 @@ const Diary = () => {
                     ←
                 </button>
                 {(getDate().week - 2847 + weekDiff - 2 > 0) ? (
-                    <div className={`${style.diaryItem} ${style.secondary}`}>
+                    <div className={`${style.diaryItem} ${style.secondary} ${style.mobileHidden}`}>
                         <h2>{getDate().week - 2847 + weekDiff - 2} неделя</h2>
                     </div>
                 ) : (
-                    <div className={`${style.diaryItem} ${style.secondary}`} style={{opacity: 0}}>
+                    <div className={`${style.diaryItem} ${style.secondary} ${style.mobileHidden}`} style={{opacity: 0}}>
                         <h2>{getDate().week - 2847 + weekDiff - 2} неделя</h2>
                     </div>
                 )}
                 {(getDate().week - 2847 + weekDiff - 1 > 0) ? (
-                    <div className={`${style.diaryItem} ${style.secondary}`}>
+                    <div className={`${style.diaryItem} ${style.secondary} ${style.mobileHidden}`}>
                         <h2>{getDate().week - 2847 + weekDiff - 1} неделя</h2>
                     </div>
                 ) : (
-                    <div className={`${style.diaryItem} ${style.secondary}`} style={{opacity: 0}}>
+                    <div className={`${style.diaryItem} ${style.secondary} ${style.mobileHidden}`} style={{opacity: 0}}>
                         <h2>{getDate().week - 2847 + weekDiff - 1} неделя</h2>
                     </div>
                 )}
@@ -102,10 +102,10 @@ const Diary = () => {
                     <h2>{getDate().week - 2847 + weekDiff} неделя</h2>
                     <span style={{color: "#618935", fontSize: "70%"}}>{days[0].date} - {days[5].date}</span>
                 </div>
-                <div className={`${style.diaryItem}`}>
+                <div className={`${style.diaryItem} ${style.mobileHidden}`}>
                     <h2>{getDate().week - 2847 + weekDiff + 1} неделя</h2>
                 </div>
-                <div className={`${style.diaryItem}`}>
+                <div className={`${style.diaryItem} ${style.mobileHidden}`}>
                     <h2>{getDate().week - 2847 + weekDiff + 2} неделя</h2>
                 </div>
                 <button className={style.dayButton} style={{fontSize: "120%"}} onClick={(e) => {

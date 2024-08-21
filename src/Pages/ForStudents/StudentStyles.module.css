@@ -11,3 +11,19 @@
     border: 3px solid #c6d8a6;
     background: #c6d8a6;
 }
+
+@media screen and (max-width: 1080px) {
+    .changeButton {
+        border: 3px solid #CCCCCC;
+        background: white;
+        padding: 20px 30px;
+        margin: 15px;
+        border-radius: 15px;
+        font-weight: 600;
+        color: #083230;
+    }
+    .changeButtonActive {
+        border: 3px solid #c6d8a6;
+        background: #c6d8a6;
+    }
+}

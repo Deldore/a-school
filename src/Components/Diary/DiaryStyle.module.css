@@ -84,3 +84,9 @@ td {
 th, td {
     padding: 15px 10px;
 }
+
+@media screen and (max-width: 640px) {
+    .mobileHidden {
+        display: none !important;
+    }
+}

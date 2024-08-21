@@ -75,7 +75,7 @@
 .menu {
     display: none;
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1080px) {
     .mobileHide {
         display: none !important;
     }
