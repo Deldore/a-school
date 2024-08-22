@@ -62,12 +62,16 @@ const Diary = () => {
 
     const [days, setDays] = useState(constructDays(weekDiff));
 
-    const [isDayShowed, setIsDayShowed] = useState([]);
-
     useEffect(() => {
         setDays(constructDays(weekDiff));
         setIsDayShowed([]);
     }, [weekDiff]);
+
+    const [isDayShowed, setIsDayShowed] = useState([]);
+    useEffect(() => {
+        setIsDayShowed([getDate().day])
+    }, []);
+
 
     const COUNTER = [1, 2, 3, 4, 5];
 
