@@ -12,7 +12,7 @@ const StudentPage = () => {
     const [pageStatus, setPageStatus] = useState(true);
     return (
         <>
-            <Header />
+            <Header active={0} />
             <MainHeader />
             <Heading title="Дневник 1-А"/>
             <div style={{padding: "15px 5%"}}>

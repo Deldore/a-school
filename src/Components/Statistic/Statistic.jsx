@@ -49,6 +49,57 @@ const Statistic = () => {
         return startDate(p) + " - " + endDate(p)
     }
 
+    const [classes, setClasses] = useState([
+        {
+            title: "Русский язык",
+            mark: 4.58,
+            visit: 14,
+            hours: 14,
+        },
+        {
+            title: "Литература",
+            mark: 4.28,
+            visit: 11,
+            hours: 14,
+        },
+        {
+            title: "Математика",
+            mark: 4.78,
+            visit: 14,
+            hours: 14,
+        },
+        {
+            title: "Труд",
+            mark: 5.00,
+            visit: 8,
+            hours: 14,
+        },
+        {
+            title: "ИЗО",
+            mark: 4.98,
+            visit: 13,
+            hours: 14,
+        },
+    ]);
+
+    function getAllVisit() {
+        let s = 0;
+        classes.map(c => {
+            s += c.visit;
+        })
+        // console.log('vis', s);
+        return s;
+    }
+    function getAllHours() {
+        let s = 0;
+        classes.map(c => {
+            s += c.hours;
+        })
+        return s;
+    }
+
+    const [allVisit, setAllVisit] = useState(getAllVisit);
+    const [allHours, setAllHours] = useState(getAllHours);
     useEffect(() => {
         if (actDate < parts[1].sp) {
             setChoosenPart(0);
@@ -127,6 +178,50 @@ const Statistic = () => {
                 }} disabled={(choosenPart > 3)}>
                     →
                 </button>
+            </div>
+            <div className={style.statistic}>
+                <h1 className={style.title}>Успеваемость:</h1>
+                <div className={style.table}>
+                    <div className={`${style.item} ${style.mainItem} ${style.topItem}`}>
+                        <span className={style.mainItem}>Предмет:</span>
+                        <span className={style.mainItem}>Успеваемость:</span>
+                    </div>
+                    <div className={`${style.item} ${style.mainItem} ${style.topItem}`}>
+                        <span className={style.mainItem}>Предмет:</span>
+                        <span className={style.mainItem}>Успеваемость:</span>
+                    </div>
+                    {classes.map((c, index) => (
+                        <div className={style.item}>
+                            <span key={index}>{c.title}</span>
+                            <div className={style.line}></div>
+                            <span key={index}>{c.mark}</span>
+                        </div>
+                    ))}
+                </div>
+                <h1 className={style.title}>Посещаемость предметов:</h1>
+                <div className={style.table}>
+                    <div className={`${style.item} ${style.mainItem} ${style.topItem}`}>
+                        <span className={style.mainItem}>Предмет:</span>
+                        <span className={style.mainItem}>Посещаемость:</span>
+                    </div>
+                    <div className={`${style.item} ${style.mainItem} ${style.topItem}`}>
+                        <span className={style.mainItem}>Предмет:</span>
+                        <span className={style.mainItem}>Посещаемость:</span>
+                    </div>
+                    {classes.map((c, index) => (
+                        <div className={style.item}>
+                            <span>{c.title}</span>
+                            <div className={style.line}></div>
+                            <span>{c.visit}/{c.hours}</span>
+                        </div>
+                    ))}
+
+                    <div className={style.item}>
+                        <span className={style.mainItem}>Итоговая посещаемость</span>
+                        <div className={style.line}></div>
+                        <span className={style.mainItem}>{getAllVisit()}/{allHours}</span>
+                    </div>
+                </div>
             </div>
         </div>
     );

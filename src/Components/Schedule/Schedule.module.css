@@ -1,0 +1,59 @@
+.main {
+    padding: 30px 5%;
+    display: flex;
+    justify-content: center;
+}
+.description {
+    margin-left: 30px;
+}
+.date {
+    display: flex;
+    justify-items: center;
+}
+.dayNumb {
+    font-size: 1.2rem;
+    align-self: center;
+}
+.dayDesc {
+    margin-left: 5px;
+    align-self: center;
+    font-weight: 600;
+}
+.secondary {
+    color: #6C827F;
+    text-transform: lowercase;
+}
+.list {
+    list-style: none;
+    width: 250px;
+}
+.item {
+    display: flex;
+    justify-content: space-between;
+}
+.title {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-decoration: underline 2px #84C063;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 648px) {
+    .main {
+        padding: 30px 5%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .title {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-decoration: underline 2px #84C063;
+        font-weight: 600;
+    }
+    .description {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}

@@ -5,7 +5,7 @@ import scheduleIcon from '../../Images/scheduleIcon.png';
 import messageIcon from '../../Images/messageIcon.png';
 import userIcon from '../../Images/userIcon.png';
 import quitIcon from '../../Images/quitIcon.png';
-const Header = () => {
+const Header = (props) => {
     const [menuState, setMenuState] = useState(false);
 
     const [menuTop, setMenuTop] = useState(0);
@@ -20,21 +20,21 @@ const Header = () => {
         <div className={style.main}>
             <div className={style.item} ref={menuRef}>
                 <ul className={`${style.list} ${style.mobileHide} ${style.spis}`}>
-                    <li className={`${style.liActive} ${style.listItem}`}>
-                        <a className={style.link} href="#">
-                            <img src={diaryIcon} style={{marginRight: "15px"}}/>
+                    <li className={(props.active == 0) ? `${style.liActive} ${style.listItem}` : `${style.listItem}`}>
+                        <a className={style.link} href="/">
+                            <img src={diaryIcon} style={{marginRight: "15px", alignSelf: "center"}}/>
                             Дневник
                         </a>
                     </li>
-                    <li className={style.listItem}>
-                        <a className={style.link} href="#">
-                            <img src={scheduleIcon} style={{marginRight: "15px"}}/>
+                    <li className={(props.active == 1) ? `${style.liActive} ${style.listItem}` : `${style.listItem}`}>
+                        <a className={style.link} href="/schedule">
+                            <img src={scheduleIcon} style={{marginRight: "15px", alignSelf: "center"}}/>
                             Расписание
                         </a>
                     </li>
-                    <li className={style.listItem}>
+                    <li className={(props.active == 2) ? `${style.liActive} ${style.listItem}` : `${style.listItem}`}>
                         <a className={style.link} href="#">
-                            <img src={messageIcon} style={{marginRight: "15px"}}/>
+                            <img src={messageIcon} style={{marginRight: "15px", alignSelf: "center"}}/>
                             Сообщения
                         </a>
                     </li>

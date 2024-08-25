@@ -7,11 +7,13 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Heading from "./Components/Heading/Heading";
 import StudentPage from "./Pages/Students/StudentPage";
 import AuthPage from "./Pages/Auth/AuthPage";
+import SchdeulePage from "./Pages/SchedulePage/SchdeulePage";
 function App() {
     return (
         <Routes>
             <Route path="/" element={<StudentPage />} />
             <Route path="/auth" element={<AuthPage />} />
+            <Route path="/schedule" element={<SchdeulePage />} />
         </Routes>
     );
 }
