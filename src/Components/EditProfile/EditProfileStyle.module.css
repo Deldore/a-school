@@ -32,6 +32,7 @@
     cursor: pointer;
     text-align: center;
     font-size: .9rem;
+    color: white;
 }
 .topicForm {
     margin-top: 15px;
@@ -50,6 +51,20 @@
 
 .bottomItem {
     width: 25%;
+}
+.bottomInput {
+    width: 90%;
+    padding: 10px 20px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+.bottomInput:focus {
+    outline: none;
+}
+.bottomInput::placeholder {
+    font-size: .8rem;
 }
 
 @media screen and (max-width: 782px){

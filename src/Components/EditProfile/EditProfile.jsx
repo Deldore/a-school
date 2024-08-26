@@ -63,6 +63,27 @@ const EditProfile = ({user, ...props}) => {
         }
     }
 
+    const formValidate = () => {
+        console.log(changedUser);
+        (!changedUser.email) ? setErrorMessages({...errorMessages, email: "логин не должен быть пустым"}) : setErrorMessages({...errorMessages, email: ""});
+        (!validateEmail(changedUser.email)) ? setErrorMessages({...errorMessages, email: "почта должна быть формата mail@mail.ru"}) : setErrorMessages({...errorMessages, email: ""});
+
+        (!changedUser.password) ? setErrorMessages({...errorMessages, password: "пароль не должен быть пустым"}) : setErrorMessages({...errorMessages, password: ""});
+        (changedUser.password.length < 8) ? setErrorMessages({...errorMessages, password: "длина пароля должна быть более 8 символов"}) : setErrorMessages({...errorMessages, password: ""});
+
+        (!changedUser.secondName) ? setErrorMessages({...errorMessages, secondName: "фамилия не должна быть пустой"}) : setErrorMessages({...errorMessages, secondName: ""});
+
+        (!changedUser.firstName) ? setErrorMessages({...errorMessages, firstName: "имя не должно быть пустым"}) : setErrorMessages({...errorMessages, firstName: ""});
+
+        (!changedUser.patronic) ? setErrorMessages({...errorMessages, patronic: "отчество не должно быть пустым"}) : setErrorMessages({...errorMessages, patronic: ""});
+
+        (!changedUser.phone) ? setErrorMessages({...errorMessages, phone: "номер телефона не должен быть пустым"}) : setErrorMessages({...errorMessages, phone: ""});
+    }
+
+    useEffect(() => {
+        formValidate();
+    }, [changedUser]);
+
     return (
         <div className={style.main}>
             <h3 className={style.title}>Основные данные аккаунта:</h3>
@@ -77,11 +98,11 @@ const EditProfile = ({user, ...props}) => {
                                placeholder="Введите свою почту"
                                onChange={(e) => setEmail(e)}/>
                         <button className={style.topicButton}
-                                style={((inputClicked === 1) ? {background: "#9cb968"} : {background: "#d4d4d4"})}
+                                style={((inputClicked === 1) ? {background: "#9cb968"} : {background: "#d4d4d4", color: "#000"})}
                                 onClick={updateEmail}
                                 disabled={(errorMessages.email)}
                         >
-                            Изменить
+                            Сохранить
                         </button>
                     </div>
                     <small className={style.error}>{errorMessages.email}</small>
@@ -96,10 +117,10 @@ const EditProfile = ({user, ...props}) => {
                                placeholder="Введите свой пароль"
                                onChange={(e) => setPassword(e)}/>
                         <button className={style.topicButton}
-                                style={((inputClicked === 2) ? {background: "#9cb968"} : {background: "#d4d4d4"})}
+                                style={((inputClicked === 2) ? {background: "#9cb968"} : {background: "#d4d4d4", color: "#000"})}
                                 onClick={updatePassword}
                                 disabled={(errorMessages.password)}
-                        >Изменить
+                        >Сохранить
                         </button>
                     </div>
                     <small className={style.error}>{errorMessages.password}</small>
@@ -114,7 +135,7 @@ const EditProfile = ({user, ...props}) => {
                          onClick={() => setInputClicked(3)}
                          style={((inputClicked === 3) ? {borderColor: "#9cb968"} : {borderColor: "#d4d4d4"})}>
                         <input type="text" name="secondName" value={changedUser.secondName}
-                               className={style.topicInput}
+                               className={style.bottomInput}
                                placeholder="Введите свою фамилию"
                                onChange={(e) => setSecondName(e)}/>
                     </div>
@@ -126,7 +147,7 @@ const EditProfile = ({user, ...props}) => {
                          onClick={() => setInputClicked(4)}
                          style={((inputClicked === 4) ? {borderColor: "#9cb968"} : {borderColor: "#d4d4d4"})}>
                         <input type="text" name="firstName" value={changedUser.firstName}
-                               className={style.topicInput}
+                               className={style.bottomInput}
                                placeholder="Введите своё имя"
                                onChange={(e) => setFirstName(e)}/>
                     </div>
@@ -138,7 +159,7 @@ const EditProfile = ({user, ...props}) => {
                          onClick={() => setInputClicked(5)}
                          style={((inputClicked === 5) ? {borderColor: "#9cb968"} : {borderColor: "#d4d4d4"})}>
                         <input type="text" name="email" value={changedUser.patronic}
-                               className={style.topicInput}
+                               className={style.bottomInput}
                                placeholder="Введите своё отчество"
                                onChange={(e) => setPatronic(e)}/>
                     </div>
@@ -150,15 +171,44 @@ const EditProfile = ({user, ...props}) => {
                          onClick={() => setInputClicked(6)}
                          style={((inputClicked === 6) ? {borderColor: "#9cb968"} : {borderColor: "#d4d4d4"})}>
                         <input type="text" name="phone" value={changedUser.phone}
-                               className={style.topicInput}
+                               className={style.bottomInput}
                                placeholder="Введите свой номер телефона"
                                onChange={(e) => setPhone(e)}/>
                     </div>
                     <small className={style.error}>{errorMessages.phone}</small>
                 </div>
             </div>
-            <button>Сохранить изменения</button>
-            <button>Отменить</button>
+            <button className={style.topicButton}
+                    style={{background: "#9cb968", marginTop: "15px"}}
+                    onClick={() => {
+                        if (!errorMessages.secondName && !errorMessages.firstName && !errorMessages.patronic && !errorMessages.phone) {
+                            props.setUser({...user,
+                                            secondName: changedUser.secondName,
+                                            firstName: changedUser.firstName,
+                                            patronic: changedUser.patronic,
+                                            phone: changedUser.phone,
+                                            });
+                        }
+                    }}
+            >
+                Сохранить изменения</button>
+            <button className={style.topicButton}
+                    style={{background: "#d4d4d4", color: "#000", marginTop: "15px", marginLeft: "15px"}}
+                    onClick={() => {
+                        setChangedUser(user);
+                        setErrorMessages({
+                            email: "",
+                            password: "",
+                            secondName: "",
+                            firstName: "",
+                            patronic: "",
+                            phone: "",
+                        });
+                        // formValidate();
+                    }}
+            >
+                Отменить
+            </button>
         </div>
     );
 };

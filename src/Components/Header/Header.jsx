@@ -72,12 +72,12 @@ const Header = ({user, ...props}) => {
                 <h1>Меню:</h1>
                 <ul className={`${style.menuList} ${style.spis}`}>
                     <li className={`${style.menuLiActive} ${style.listItem}`}>
-                        <Link className={style.link} to="#">
+                        <Link className={style.link} to="/">
                             Дневник
                         </Link>
                     </li>
                     <li className={style.listItem}>
-                        <Link className={style.link} to="#">
+                        <Link className={style.link} to="/schedule">
                             Расписание
                         </Link>
                     </li>
@@ -87,7 +87,7 @@ const Header = ({user, ...props}) => {
                         </Link>
                     </li>
                     <li className={`${style.listItem}`}>
-                        <Link className={style.link} to="#">
+                        <Link className={style.link} to="/profile">
                             <div style={{alignSelf: "center"}}>
                                 <img src={quitIcon} style={{marginRight: "15px"}}/>
                             </div>

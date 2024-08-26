@@ -6,7 +6,6 @@ import Footer from "../../Components/Footer/Footer";
 import EditProfile from "../../Components/EditProfile/EditProfile";
 
 const EditProfilePage = ({user, ...props}) => {
-    console.log(user)
     return (
         <>
             <Header active={4} user={user}/>
