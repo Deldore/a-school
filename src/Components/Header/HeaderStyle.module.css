@@ -71,6 +71,9 @@
     color: #FFF !important;
     text-decoration: none;
 }
+.userLinkActive {
+    background: #749951;
+}
 .menuButton {
     display: none;
 }

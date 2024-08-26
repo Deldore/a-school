@@ -5,6 +5,7 @@ import scheduleIcon from '../../Images/scheduleIcon.png';
 import messageIcon from '../../Images/messageIcon.png';
 import userIcon from '../../Images/userIcon.png';
 import quitIcon from '../../Images/quitIcon.png';
+import {Link} from "react-router-dom";
 const Header = ({user, ...props}) => {
     const [menuState, setMenuState] = useState(false);
 
@@ -21,45 +22,45 @@ const Header = ({user, ...props}) => {
             <div className={style.item} ref={menuRef}>
                 <ul className={`${style.list} ${style.mobileHide} ${style.spis}`}>
                     <li className={(props.active == 0) ? `${style.liActive} ${style.listItem}` : `${style.listItem}`}>
-                        <a className={style.link} href="/">
+                        <Link className={style.link} to="/">
                             <img src={diaryIcon} style={{marginRight: "15px", alignSelf: "center"}}/>
                             Дневник
-                        </a>
+                        </Link>
                     </li>
                     <li className={(props.active == 1) ? `${style.liActive} ${style.listItem}` : `${style.listItem}`}>
-                        <a className={style.link} href="/schedule">
+                        <Link className={style.link} to="/schedule">
                             <img src={scheduleIcon} style={{marginRight: "15px", alignSelf: "center"}}/>
                             Расписание
-                        </a>
+                        </Link>
                     </li>
                     <li className={(props.active == 2) ? `${style.liActive} ${style.listItem}` : `${style.listItem}`}>
-                        <a className={style.link} href="#">
+                        <Link className={style.link} to="#">
                             <img src={messageIcon} style={{marginRight: "15px", alignSelf: "center"}}/>
                             Сообщения
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>
             <div className={style.item}>
                 <ul className={`${style.list} ${style.spis}`}>
-                    <li className={style.listItem}>
+                    <li className={(props.active === 4) ? `${style.liActive} ${style.listItem}` : `${style.listItem}`}>
                         <div style={{alignSelf: "center"}}>
                             <img src={userIcon} style={{marginRight: "15px"}}/>
                         </div>
-                        <a className={style.userLink} href="/profile">
+                        <Link className={style.userLink} to="/profile">
                             {user.secondName} {user.firstName} {user.patronic}
                             <span className={style.secondary}>
                                 {user.form} class
                             </span>
-                        </a>
+                        </Link>
                     </li>
                     <li className={`${style.mobileHide} ${style.listItem}`}>
-                        <a className={style.link} href="#">
+                        <Link className={style.link} to="#">
                             <div style={{alignSelf: "center"}}>
                                 <img src={quitIcon} style={{marginRight: "15px"}}/>
                             </div>
                             Выйти
-                        </a>
+                        </Link>
                     </li>
                     <li className={style.listItem}>
                         <button className={style.menuButton} onClick={() => {
@@ -71,53 +72,53 @@ const Header = ({user, ...props}) => {
                 <h1>Меню:</h1>
                 <ul className={`${style.menuList} ${style.spis}`}>
                     <li className={`${style.menuLiActive} ${style.listItem}`}>
-                        <a className={style.link} href="#">
+                        <Link className={style.link} to="#">
                             Дневник
-                        </a>
+                        </Link>
                     </li>
                     <li className={style.listItem}>
-                        <a className={style.link} href="#">
+                        <Link className={style.link} to="#">
                             Расписание
-                        </a>
+                        </Link>
                     </li>
                     <li className={style.listItem}>
-                        <a className={style.link} href="#">
+                        <Link className={style.link} to="#">
                             Сообщения
-                        </a>
+                        </Link>
                     </li>
                     <li className={`${style.listItem}`}>
-                        <a className={style.link} href="#">
+                        <Link className={style.link} to="#">
                             <div style={{alignSelf: "center"}}>
                                 <img src={quitIcon} style={{marginRight: "15px"}}/>
                             </div>
                             Выйти
-                        </a>
+                        </Link>
                     </li>
                     <hr style={{color: "white"}}/>
                     <li className={`${style.listItem}`}>
-                        <a className={`${style.link}`} href="#">
+                        <Link className={`${style.link}`} to="#">
                             ОБРАЗОВАНИЕ
-                        </a>
+                        </Link>
                     </li>
                     <li className={`${style.listItem}`}>
-                        <a className={`${style.link}`} href="#">
+                        <Link className={`${style.link}`} to="#">
                             ПОСТУПЛЕНИЕ И ОПЛАТА
-                        </a>
+                        </Link>
                     </li>
                     <li className={`${style.listItem}`}>
-                        <a className={`${style.link}`} href="#">
+                        <Link className={`${style.link}`} to="#">
                             ИНФОРМАЦИЯ
-                        </a>
+                        </Link>
                     </li>
                     <li className={`${style.listItem}`}>
-                        <a className={`${style.link}`} href="#">
+                        <Link className={`${style.link}`} to="#">
                             КОНТАКТЫ
-                        </a>
+                        </Link>
                     </li>
                     <li className={`${style.listItem} ${style.listContactItem}`} style={{flexDirection: "column"}}>
                         <p>+7 812 777-77-77</p>
                         <br/>
-                        <a className={`${style.contactLink}`}>Обратная связь</a>
+                        <Link className={`${style.contactLink}`}>Обратная связь</Link>
                     </li>
                 </ul>
             </div>

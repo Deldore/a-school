@@ -9,7 +9,7 @@ const EditProfilePage = ({user, ...props}) => {
     console.log(user)
     return (
         <>
-            <Header user={user}/>
+            <Header active={4} user={user}/>
             <MainHeader user={user}/>
             <Heading title={`Профиль ${user.secondName} ${user.firstName} ${user.patronic}`} />
             <EditProfile user={user} setUser={props.setUser}/>

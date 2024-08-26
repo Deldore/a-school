@@ -4,41 +4,161 @@ import Heading from "../Heading/Heading";
 
 const EditProfile = ({user, ...props}) => {
     const [changedUser, setChangedUser] = useState(user);
-    const [emailClicked, setEmailClicked] = useState(true);
+    const [inputClicked, setInputClicked] = useState(0);
+
+    const [errorMessages, setErrorMessages] = useState({
+        email: "",
+        password: "",
+        secondName: "",
+        firstName: "",
+        patronic: "",
+        phone: "",
+    });
+
+    const validateEmail = (email) => {
+        return String(email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+    };
+
+    const setEmail = (e) => {
+        (!e.target.value) ? setErrorMessages({...errorMessages, email: "логин не должен быть пустым"}) : setErrorMessages({...errorMessages, email: ""});
+        (!validateEmail(e.target.value)) ? setErrorMessages({...errorMessages, email: "почта должна быть формата mail@mail.ru"}) : setErrorMessages({...errorMessages, email: ""});
+        setChangedUser({...changedUser, email: e.target.value});
+    }
+
+    const setPassword = (e) => {
+        (!e.target.value) ? setErrorMessages({...errorMessages, password: "пароль не должен быть пустым"}) : setErrorMessages({...errorMessages, password: ""});
+        (e.target.value.length < 8) ? setErrorMessages({...errorMessages, password: "длина пароля должна быть более 8 символов"}) : setErrorMessages({...errorMessages, password: ""});
+        setChangedUser({...changedUser, password: e.target.value});
+    }
+
+    const setSecondName = (e) => {
+        (!e.target.value) ? setErrorMessages({...errorMessages, secondName: "фамилия не должна быть пустой"}) : setErrorMessages({...errorMessages, secondName: ""});
+        setChangedUser({...changedUser, secondName: e.target.value});
+    }
+    const setFirstName = (e) => {
+        (!e.target.value) ? setErrorMessages({...errorMessages, firstName: "имя не должно быть пустым"}) : setErrorMessages({...errorMessages, firstName: ""});
+        setChangedUser({...changedUser, firstName: e.target.value});
+    }
+    const setPatronic = (e) => {
+        (!e.target.value) ? setErrorMessages({...errorMessages, patronic: "отчество не должно быть пустым"}) : setErrorMessages({...errorMessages, patronic: ""});
+        setChangedUser({...changedUser, patronic: e.target.value});
+    }
+    const setPhone = (e) => {
+        (!e.target.value) ? setErrorMessages({...errorMessages, phone: "номер телефона не должен быть пустым"}) : setErrorMessages({...errorMessages, phone: ""});
+        setChangedUser({...changedUser, phone: e.target.value});
+    }
+
+    const updateEmail = () => {
+        if (!errorMessages.email) {
+            props.setUser({...user, email: changedUser.email})
+        }
+    }
+    const updatePassword = () => {
+        if (!errorMessages.password) {
+             props.setUser({...user, password: changedUser.password})
+        }
+    }
 
     return (
         <div className={style.main}>
-            <h3>Основные данные аккаунта</h3>
+            <h3 className={style.title}>Основные данные аккаунта:</h3>
             <div className={style.topic}>
                 <div className={style.topicItem}>
-                    <label htmlFor="email">Ваш логин:</label>
+                    <label className={style.label} htmlFor="email">Ваш логин:</label>
                     <div className={style.topicForm}
-                         onClick={() => setEmailClicked(true)}
-                         style={(emailClicked ? {borderColor: "#9cb968"} : {borderColor: "#d4d4d4"})}>
+                         onClick={() => setInputClicked(1)}
+                         style={((inputClicked === 1) ? {borderColor: "#9cb968"} : {borderColor: "#d4d4d4"})}>
                         <input type="text" name="email" value={changedUser.email}
                                className={style.topicInput}
                                placeholder="Введите свою почту"
-                               onChange={(e) => setChangedUser({...changedUser, email: e.target.value})}/>
+                               onChange={(e) => setEmail(e)}/>
                         <button className={style.topicButton}
-                                style={(emailClicked ? {background: "#9cb968"} : {background: "#d4d4d4"})}>Изменить</button>
+                                style={((inputClicked === 1) ? {background: "#9cb968"} : {background: "#d4d4d4"})}
+                                onClick={updateEmail}
+                                disabled={(errorMessages.email)}
+                        >
+                            Изменить
+                        </button>
                     </div>
-                    <small>введите верную почту</small>
+                    <small className={style.error}>{errorMessages.email}</small>
                 </div>
                 <div className={style.topicItem}>
-                    <label htmlFor="password">Ваш пароль:</label>
+                    <label className={style.label} htmlFor="password">Ваш пароль:</label>
                     <div className={style.topicForm}
-                         onClick={() => setEmailClicked(false)}
-                         style={emailClicked ? {borderColor:  "#d4d4d4"} : {borderColor: "#9cb968"}}>
+                         onClick={() => setInputClicked(2)}
+                         style={(inputClicked === 2) ? {borderColor: "#9cb968"} : {borderColor: "#d4d4d4"}}>
                         <input type="text" name="password" value={changedUser.password}
                                className={style.topicInput}
                                placeholder="Введите свой пароль"
-                               onChange={(e) => setChangedUser({...changedUser, password: e.target.value})}/>
+                               onChange={(e) => setPassword(e)}/>
                         <button className={style.topicButton}
-                                style={(!emailClicked ? {background: "#9cb968"} : {background: "#d4d4d4"})}>Изменить</button>
+                                style={((inputClicked === 2) ? {background: "#9cb968"} : {background: "#d4d4d4"})}
+                                onClick={updatePassword}
+                                disabled={(errorMessages.password)}
+                        >Изменить
+                        </button>
                     </div>
-                    <small>введите верный пароль</small>
+                    <small className={style.error}>{errorMessages.password}</small>
                 </div>
             </div>
+
+            <h3 className={style.title}>Информация об ученике:</h3>
+            <div className={style.topic}>
+                <div className={style.bottomItem}>
+                    <label className={style.label} htmlFor="secondName">Фамилия:</label>
+                    <div className={style.topicForm}
+                         onClick={() => setInputClicked(3)}
+                         style={((inputClicked === 3) ? {borderColor: "#9cb968"} : {borderColor: "#d4d4d4"})}>
+                        <input type="text" name="secondName" value={changedUser.secondName}
+                               className={style.topicInput}
+                               placeholder="Введите свою фамилию"
+                               onChange={(e) => setSecondName(e)}/>
+                    </div>
+                    <small className={style.error}>{errorMessages.secondName}</small>
+                </div>
+                <div className={style.bottomItem}>
+                    <label className={style.label} htmlFor="firstName">Имя:</label>
+                    <div className={style.topicForm}
+                         onClick={() => setInputClicked(4)}
+                         style={((inputClicked === 4) ? {borderColor: "#9cb968"} : {borderColor: "#d4d4d4"})}>
+                        <input type="text" name="firstName" value={changedUser.firstName}
+                               className={style.topicInput}
+                               placeholder="Введите своё имя"
+                               onChange={(e) => setFirstName(e)}/>
+                    </div>
+                    <small className={style.error}>{errorMessages.firstName}</small>
+                </div>
+                <div className={style.bottomItem}>
+                    <label className={style.label} htmlFor="patronic">Отчество:</label>
+                    <div className={style.topicForm}
+                         onClick={() => setInputClicked(5)}
+                         style={((inputClicked === 5) ? {borderColor: "#9cb968"} : {borderColor: "#d4d4d4"})}>
+                        <input type="text" name="email" value={changedUser.patronic}
+                               className={style.topicInput}
+                               placeholder="Введите своё отчество"
+                               onChange={(e) => setPatronic(e)}/>
+                    </div>
+                    <small className={style.error}>{errorMessages.patronic}</small>
+                </div>
+                <div className={style.bottomItem}>
+                    <label className={style.label} htmlFor="phone">Контактный телефон:</label>
+                    <div className={style.topicForm}
+                         onClick={() => setInputClicked(6)}
+                         style={((inputClicked === 6) ? {borderColor: "#9cb968"} : {borderColor: "#d4d4d4"})}>
+                        <input type="text" name="phone" value={changedUser.phone}
+                               className={style.topicInput}
+                               placeholder="Введите свой номер телефона"
+                               onChange={(e) => setPhone(e)}/>
+                    </div>
+                    <small className={style.error}>{errorMessages.phone}</small>
+                </div>
+            </div>
+            <button>Сохранить изменения</button>
+            <button>Отменить</button>
         </div>
     );
 };

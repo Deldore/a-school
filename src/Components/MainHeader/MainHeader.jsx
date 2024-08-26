@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './MainHeaderStyle.module.css';
 import logo from '../../Images/logo.png';
+import {Link} from "react-router-dom";
 
 const MainHeader = () => {
     return (
@@ -11,28 +12,28 @@ const MainHeader = () => {
             <div className={style.mobileHide} style={{alignSelf: "end"}}>
                 <ul className={`${style.spis}`}>
                     <li className={`${style.listItem}`}>
-                        <a className={`${style.link}`} href="#">
+                        <Link className={`${style.link}`} to="#">
                             ОБРАЗОВАНИЕ
-                        </a>
+                        </Link>
                     </li>
                     <li className={`${style.listItem}`}>
-                        <a className={`${style.link}`} href="#">
+                        <Link className={`${style.link}`} to="#">
                             ПОСТУПЛЕНИЕ И ОПЛАТА
-                        </a>
+                        </Link>
                     </li>
                     <li className={`${style.listItem}`}>
-                        <a className={`${style.link}`} href="#">
+                        <Link className={`${style.link}`} to="#">
                             ИНФОРМАЦИЯ
-                        </a>
+                        </Link>
                     </li>
                     <li className={`${style.listItem}`}>
-                        <a className={`${style.link}`} href="#">
+                        <Link className={`${style.link}`} to="#">
                             КОНТАКТЫ
-                        </a>
+                        </Link>
                     </li>
                     <li className={`${style.listItem} ${style.listContactItem}`}>
                         <p>+7 812 777-77-77</p>
-                        <a className={`${style.contactLink}`}>Обратная связь</a>
+                        <Link className={`${style.contactLink}`}>Обратная связь</Link>
                     </li>
                 </ul>
             </div>

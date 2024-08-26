@@ -18,6 +18,7 @@ function App() {
             patronic: "Владимирович",
             form: "2-A",
             role: "0",
+            phone: "+78127777777",
         })
     return (
         <Routes>

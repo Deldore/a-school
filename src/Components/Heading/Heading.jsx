@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './HeadingStyle.module.css';
+import {Link} from "react-router-dom";
 
 const Heading = (props) => {
     return (
@@ -7,7 +8,7 @@ const Heading = (props) => {
             <div>
                 <ul className={`${style.list}`}>
                     <li className={`${style.item} ${style.itemLink}`}>
-                        <a href="/">Главная</a>
+                        <Link to="/">Главная</Link>
                     </li> >>
                     <li className={`${style.secondary} ${style.item}`}>
                         {props.title}
