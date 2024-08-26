@@ -5,10 +5,10 @@ import MainHeader from "../../Components/MainHeader/MainHeader";
 import Footer from "../../Components/Footer/Footer";
 import Heading from "../../Components/Heading/Heading";
 import Schedule from "../../Components/Schedule/Schedule";
-const SchdeulePage = () => {
+const SchdeulePage = ({user, ...props}) => {
     return (
         <>
-            <Header active={1} />
+            <Header active={1} user={user}/>
             <MainHeader />
             <Heading title="Расписание"/>
             <Schedule />

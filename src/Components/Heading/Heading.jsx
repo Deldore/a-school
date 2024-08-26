@@ -7,7 +7,7 @@ const Heading = (props) => {
             <div>
                 <ul className={`${style.list}`}>
                     <li className={`${style.item} ${style.itemLink}`}>
-                        <a href="#">Главная</a>
+                        <a href="/">Главная</a>
                     </li> >>
                     <li className={`${style.secondary} ${style.item}`}>
                         {props.title}

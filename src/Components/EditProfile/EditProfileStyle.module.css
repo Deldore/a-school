@@ -1,0 +1,35 @@
+.main {
+    padding: 15px 5%;
+}
+.topic {
+    display: flex;
+    justify-content: space-between;
+}
+.topicItem {
+    width: 50%;
+}
+.topicInput {
+    width: 80%;
+    padding: 10px 20px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+.topicButton {
+    width: 20%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: #ededed;
+}
+.topicForm {
+    padding: 0;
+    width: 90%;
+    border-radius: 10px;
+    border: 2px solid;
+}
+.topicInput:focus {
+    outline: none;
+}

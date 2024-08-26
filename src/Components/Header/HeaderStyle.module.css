@@ -68,6 +68,8 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    color: #FFF !important;
+    text-decoration: none;
 }
 .menuButton {
     display: none;

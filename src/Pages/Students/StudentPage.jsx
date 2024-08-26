@@ -7,14 +7,14 @@ import style from './StudentStyles.module.css';
 import Statistic from "../../Components/Statistic/Statistic";
 import Footer from "../../Components/Footer/Footer";
 
-const StudentPage = () => {
+const StudentPage = ({user, ...props}) => {
 
     const [pageStatus, setPageStatus] = useState(true);
     return (
         <>
-            <Header active={0} />
+            <Header active={0} user={user}/>
             <MainHeader />
-            <Heading title="Дневник 1-А"/>
+            <Heading title={`Дневник ${user.form}`}/>
             <div style={{padding: "15px 5%"}}>
                 <button onClick={() => setPageStatus(true)}
                         className={(!pageStatus) ? style.changeButton : `${style.changeButton} ${style.changeButtonActive}`}>Дневник</button>

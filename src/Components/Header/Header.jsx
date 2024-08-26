@@ -5,7 +5,7 @@ import scheduleIcon from '../../Images/scheduleIcon.png';
 import messageIcon from '../../Images/messageIcon.png';
 import userIcon from '../../Images/userIcon.png';
 import quitIcon from '../../Images/quitIcon.png';
-const Header = (props) => {
+const Header = ({user, ...props}) => {
     const [menuState, setMenuState] = useState(false);
 
     const [menuTop, setMenuTop] = useState(0);
@@ -46,12 +46,12 @@ const Header = (props) => {
                         <div style={{alignSelf: "center"}}>
                             <img src={userIcon} style={{marginRight: "15px"}}/>
                         </div>
-                        <div className={style.userLink}>
-                        Фамилия Имя Отчество
+                        <a className={style.userLink} href="/profile">
+                            {user.secondName} {user.firstName} {user.patronic}
                             <span className={style.secondary}>
-                                1-A class
+                                {user.form} class
                             </span>
-                        </div>
+                        </a>
                     </li>
                     <li className={`${style.mobileHide} ${style.listItem}`}>
                         <a className={style.link} href="#">
@@ -114,8 +114,9 @@ const Header = (props) => {
                             КОНТАКТЫ
                         </a>
                     </li>
-                    <li className={`${style.listItem} ${style.listContactItem}`}>
+                    <li className={`${style.listItem} ${style.listContactItem}`} style={{flexDirection: "column"}}>
                         <p>+7 812 777-77-77</p>
+                        <br/>
                         <a className={`${style.contactLink}`}>Обратная связь</a>
                     </li>
                 </ul>
