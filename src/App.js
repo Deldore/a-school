@@ -9,6 +9,8 @@ import StudentPage from "./Pages/Students/StudentPage";
 import AuthPage from "./Pages/Auth/AuthPage";
 import SchdeulePage from "./Pages/SchedulePage/SchdeulePage";
 import EditProfilePage from "./Pages/EditProfile/EditProfilePage";
+import Registration from "./Components/Registration/Registration";
+import RegistrationPage from "./Pages/Registration/RegistrationPage";
 function App() {
         const [user, setUser] = useState({
             email: "mail@mail.ru",
@@ -24,6 +26,7 @@ function App() {
         <Routes>
             <Route path="/" element={<StudentPage user={user} />} />
             <Route path="/auth" element={<AuthPage user={user} />} />
+            <Route path="/registration/:token" element={<RegistrationPage />} />
             <Route path="/schedule" element={<SchdeulePage user={user} />} />
             <Route path="/profile" element={<EditProfilePage user={user} setUser={setUser}/>} />
             <Route path="*" element={<Navigate to="/" replace={true} />} />
