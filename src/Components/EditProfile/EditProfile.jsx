@@ -24,31 +24,53 @@ const EditProfile = ({user, ...props}) => {
     };
 
     const setEmail = (e) => {
-        (!e.target.value) ? setErrorMessages({...errorMessages, email: "логин не должен быть пустым"}) : setErrorMessages({...errorMessages, email: ""});
-        (!validateEmail(e.target.value)) ? setErrorMessages({...errorMessages, email: "почта должна быть формата mail@mail.ru"}) : setErrorMessages({...errorMessages, email: ""});
+        setErrorMessages({...errorMessages, email: ""});
+        if (!e.target.value) {
+            setErrorMessages({...errorMessages, email: "логин не должен быть пустым"})
+        }
+        if (!validateEmail(e.target.value)) {
+            setErrorMessages({...errorMessages, email: "почта должна быть формата mail@mail.ru"})
+        }
         setChangedUser({...changedUser, email: e.target.value});
     }
 
     const setPassword = (e) => {
-        (!e.target.value) ? setErrorMessages({...errorMessages, password: "пароль не должен быть пустым"}) : setErrorMessages({...errorMessages, password: ""});
-        (e.target.value.length < 8) ? setErrorMessages({...errorMessages, password: "длина пароля должна быть более 8 символов"}) : setErrorMessages({...errorMessages, password: ""});
+        setErrorMessages({...errorMessages, password: ""})
+        if (!e.target.value) {
+            setErrorMessages({...errorMessages, password: "пароль не должен быть пустым"})
+        }
+        if (e.target.value.length < 8) {
+            setErrorMessages({...errorMessages, password: "длина пароля должна быть более 8 символов"})
+        }
         setChangedUser({...changedUser, password: e.target.value});
     }
 
     const setSecondName = (e) => {
-        (!e.target.value) ? setErrorMessages({...errorMessages, secondName: "фамилия не должна быть пустой"}) : setErrorMessages({...errorMessages, secondName: ""});
+        setErrorMessages({...errorMessages, secondName: ""});
+        if (!e.target.value) {
+            setErrorMessages({...errorMessages, secondName: "фамилия не должна быть пустой"})
+        }
         setChangedUser({...changedUser, secondName: e.target.value});
     }
     const setFirstName = (e) => {
-        (!e.target.value) ? setErrorMessages({...errorMessages, firstName: "имя не должно быть пустым"}) : setErrorMessages({...errorMessages, firstName: ""});
+        setErrorMessages({...errorMessages, firstName: ""});
+        if (!e.target.value) {
+            setErrorMessages({...errorMessages, firstName: "имя не должно быть пустым"})
+        }
         setChangedUser({...changedUser, firstName: e.target.value});
     }
     const setPatronic = (e) => {
-        (!e.target.value) ? setErrorMessages({...errorMessages, patronic: "отчество не должно быть пустым"}) : setErrorMessages({...errorMessages, patronic: ""});
+        setErrorMessages({...errorMessages, patronic: ""});
+        if (!e.target.value) {
+            setErrorMessages({...errorMessages, patronic: "отчество не должно быть пустым"})
+        }
         setChangedUser({...changedUser, patronic: e.target.value});
     }
     const setPhone = (e) => {
-        (!e.target.value) ? setErrorMessages({...errorMessages, phone: "номер телефона не должен быть пустым"}) : setErrorMessages({...errorMessages, phone: ""});
+        setErrorMessages({...errorMessages, phone: ""});
+        if (!e.target.value) {
+            setErrorMessages({...errorMessages, phone: "номер телефона не должен быть пустым"})
+        }
         setChangedUser({...changedUser, phone: e.target.value});
     }
 
@@ -64,20 +86,41 @@ const EditProfile = ({user, ...props}) => {
     }
 
     const formValidate = () => {
-        console.log(changedUser);
-        (!changedUser.email) ? setErrorMessages({...errorMessages, email: "логин не должен быть пустым"}) : setErrorMessages({...errorMessages, email: ""});
-        (!validateEmail(changedUser.email)) ? setErrorMessages({...errorMessages, email: "почта должна быть формата mail@mail.ru"}) : setErrorMessages({...errorMessages, email: ""});
+        setErrorMessages({...errorMessages, email: ""});
+        if (!changedUser.email) {
+            setErrorMessages({...errorMessages, email: "логин не должен быть пустым"})
+        }
+        if (!validateEmail(changedUser.email)) {
+            setErrorMessages({...errorMessages, email: "почта должна быть формата mail@mail.ru"})
+        }
 
-        (!changedUser.password) ? setErrorMessages({...errorMessages, password: "пароль не должен быть пустым"}) : setErrorMessages({...errorMessages, password: ""});
-        (changedUser.password.length < 8) ? setErrorMessages({...errorMessages, password: "длина пароля должна быть более 8 символов"}) : setErrorMessages({...errorMessages, password: ""});
+        setErrorMessages({...errorMessages, password: ""})
+        if (!changedUser.password) {
+            setErrorMessages({...errorMessages, password: "пароль не должен быть пустым"})
+        }
+        if (changedUser.password.length < 8) {
+            setErrorMessages({...errorMessages, password: "длина пароля должна быть более 8 символов"})
+        }
 
-        (!changedUser.secondName) ? setErrorMessages({...errorMessages, secondName: "фамилия не должна быть пустой"}) : setErrorMessages({...errorMessages, secondName: ""});
+        setErrorMessages({...errorMessages, secondName: ""});
+        if (!changedUser.secondName) {
+            setErrorMessages({...errorMessages, secondName: "фамилия не должна быть пустой"})
+        }
 
-        (!changedUser.firstName) ? setErrorMessages({...errorMessages, firstName: "имя не должно быть пустым"}) : setErrorMessages({...errorMessages, firstName: ""});
+        setErrorMessages({...errorMessages, firstName: ""});
+        if (!changedUser.firstName) {
+            setErrorMessages({...errorMessages, firstName: "имя не должно быть пустым"})
+        }
 
-        (!changedUser.patronic) ? setErrorMessages({...errorMessages, patronic: "отчество не должно быть пустым"}) : setErrorMessages({...errorMessages, patronic: ""});
+        setErrorMessages({...errorMessages, patronic: ""});
+        if (!changedUser.patronic) {
+            setErrorMessages({...errorMessages, patronic: "отчество не должно быть пустым"})
+        }
 
-        (!changedUser.phone) ? setErrorMessages({...errorMessages, phone: "номер телефона не должен быть пустым"}) : setErrorMessages({...errorMessages, phone: ""});
+        setErrorMessages({...errorMessages, phone: ""});
+        if (!changedUser.phone) {
+            setErrorMessages({...errorMessages, phone: "номер телефона не должен быть пустым"})
+        }
     }
 
     useEffect(() => {

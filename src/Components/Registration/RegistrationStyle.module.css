@@ -1,3 +1,100 @@
 .main {
     padding: 15px 5%;
 }
+.title {
+    margin-top: 15px;
+    font-weight: 600;
+}
+.topic {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.topicItem {
+    width: 33%;
+}
+.topicInput {
+    width: 95%;
+    padding: 10px 20px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+.topicButton {
+    transition: .3s;
+    width: 30%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: #ededed;
+    cursor: pointer;
+    text-align: center;
+    font-size: .9rem;
+    color: white;
+}
+.topicForm {
+    margin-top: 15px;
+    padding: 0;
+    width: 90%;
+    border-radius: 10px;
+    border: 2px solid;
+}
+.topicInput:focus {
+    outline: none;
+}
+.error {
+    color: red;
+    font-weight: 100;
+}
+
+.bottomItem {
+    width: 25%;
+}
+.bottomInput {
+    width: 90%;
+    padding: 10px 20px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+.bottomInput:focus {
+    outline: none;
+}
+.bottomInput::placeholder {
+    font-size: .8rem;
+}
+
+@media screen and (max-width: 782px){
+    .topic {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .topicItem, .bottomItem {
+        width: 100%;
+        margin-top: 15px;
+    }
+    .topicInput {
+        width: 60%;
+        padding: 10px 20px;
+        border-radius: 10px 0 0 10px;
+        border: none;
+        box-sizing: border-box;
+        font-size: 1rem;
+    }
+    .topicButton {
+        width: 40%;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 10px;
+        box-sizing: border-box;
+        background: #ededed;
+        cursor: pointer;
+        text-align: center;
+        font-size: .9rem;
+    }
+}

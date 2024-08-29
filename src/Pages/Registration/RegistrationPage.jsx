@@ -10,12 +10,22 @@ const RegistrationPage = () => {
 
     const [token, _] = useState(useParams().token);
 
-    console.log(token);
+    const [user, setUser] = useState({
+        token: "123",
+        secondName: "Пресняков",
+        firstName: "Никита",
+        patronic: "Владимирович",
+        email: "example@mail.ru",
+        number: "",
+        password: "",
+        confirmPassword: "",
+    });
+
     return (
         <>
             <MainHeader />
             <Heading title="Регистрация" />
-            <Registration />
+            <Registration user={user} setUser={setUser} token={token} />
             <Footer />
         </>
     );
