@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import style from './DiaryStyle.module.css';
 import Heading from "../Heading/Heading";
 
-const Diary = () => {
+const StudentDiary = () => {
     const DAYS = [
         'Понедельник',
         'Вторник',
@@ -221,4 +221,4 @@ const Diary = () => {
     );
 };
 
-export default Diary;
+export default StudentDiary;

@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import style from './Schedule.module.css';
+import style from './Calendar.module.css';
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
-const Schedule = () => {
+const StudentCalendar = () => {
     const DAYS = [
         'Воскресенье',
         'Понедельник',
@@ -91,4 +91,4 @@ const Schedule = () => {
     );
 };
 
-export default Schedule;
+export default StudentCalendar;

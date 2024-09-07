@@ -21,19 +21,19 @@ const Header = ({user, ...props}) => {
         <div className={style.main}>
             <div className={style.item} ref={menuRef}>
                 <ul className={`${style.list} ${style.mobileHide} ${style.spis}`}>
-                    <li className={(props.active == 0) ? `${style.liActive} ${style.listItem}` : `${style.listItem}`}>
-                        <Link className={style.link} to="/">
-                            <img src={diaryIcon} style={{marginRight: "15px", alignSelf: "center"}}/>
-                            Дневник
-                        </Link>
-                    </li>
-                    <li className={(props.active == 1) ? `${style.liActive} ${style.listItem}` : `${style.listItem}`}>
+                    <li className={(props.active === 0) ? `${style.liActive} ${style.listItem}` : `${style.listItem}`}>
                         <Link className={style.link} to="/schedule">
-                            <img src={scheduleIcon} style={{marginRight: "15px", alignSelf: "center"}}/>
-                            Расписание
+                            <img src={diaryIcon} style={{marginRight: "15px", alignSelf: "center"}}/>
+                            {(!user.role) ? "Дневник" : "Расписание"}
                         </Link>
                     </li>
-                    <li className={(props.active == 2) ? `${style.liActive} ${style.listItem}` : `${style.listItem}`}>
+                    <li className={(props.active === 1) ? `${style.liActive} ${style.listItem}` : `${style.listItem}`}>
+                        <Link className={style.link} to="/calendar">
+                            <img src={scheduleIcon} style={{marginRight: "15px", alignSelf: "center"}}/>
+                            {(!user.role) ? "Расписание" : "Журнал"}
+                        </Link>
+                    </li>
+                    <li className={(props.active === 2) ? `${style.liActive} ${style.listItem}` : `${style.listItem}`}>
                         <Link className={style.link} to="#">
                             <img src={messageIcon} style={{marginRight: "15px", alignSelf: "center"}}/>
                             Сообщения
@@ -72,12 +72,12 @@ const Header = ({user, ...props}) => {
                 <h1>Меню:</h1>
                 <ul className={`${style.menuList} ${style.spis}`}>
                     <li className={`${style.menuLiActive} ${style.listItem}`}>
-                        <Link className={style.link} to="/">
+                        <Link className={style.link} to="/schedule">
                             Дневник
                         </Link>
                     </li>
                     <li className={style.listItem}>
-                        <Link className={style.link} to="/schedule">
+                        <Link className={style.link} to="/calendar">
                             Расписание
                         </Link>
                     </li>

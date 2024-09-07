@@ -38,6 +38,19 @@
     font-weight: 600;
 }
 
+.button {
+    padding: 15px 30px;
+    border-radius: 10px;
+    background: none;
+    border: 3px solid #CCCCCC;
+    font-weight: 600;
+}
+
+.buttonActive {
+    background: #c6d8a6;
+    border-color: #c6d8a6;
+}
+
 @media screen and (max-width: 648px) {
     .main {
         padding: 30px 5%;
